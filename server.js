@@ -329,6 +329,32 @@ const listener = async (req, res) => {
         return json(res, 200, { user: publicUser(target) });
       });
     }
+    const reject = pathname.match(/^\/api\/users\/([^/]+)\/reject$/);
+    if (reject && req.method === 'POST') {
+      if (user.role !== 'admin') return fail(res, 403, 'Administrator access required');
+      return locked(async () => {
+        const latest = loadAccounts();
+        const target = latest.find(a => a.id === reject[1]);
+        if (!target) return fail(res, 404, 'Account not found');
+        if (target.role !== 'pending') return fail(res, 409, 'Only pending accounts can be rejected');
+        saveAccounts(latest.filter(a => a.id !== target.id));
+        return json(res, 200, { ok: true });
+      });
+    }
+    const revoke = pathname.match(/^\/api\/users\/([^/]+)\/revoke$/);
+    if (revoke && req.method === 'POST') {
+      if (user.role !== 'admin') return fail(res, 403, 'Administrator access required');
+      return locked(async () => {
+        const latest = loadAccounts();
+        const target = latest.find(a => a.id === revoke[1]);
+        if (!target) return fail(res, 404, 'Account not found');
+        if (target.id === user.id) return fail(res, 400, 'You cannot revoke your own account');
+        if (target.role === 'pending') return fail(res, 409, 'Use reject for pending accounts');
+        saveAccounts(latest.filter(a => a.id !== target.id));
+        for (const [token, session] of sessions) if (session.userId === target.id) sessions.delete(token);
+        return json(res, 200, { ok: true });
+      });
+    }
     if (pathname === '/api/lunch-now' && req.method === 'POST') {
       if (!user.employeeId) return fail(res, 403, 'No employee linked to account');
       return locked(async () => {

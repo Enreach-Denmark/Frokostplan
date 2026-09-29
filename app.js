@@ -155,6 +155,10 @@ function render() {
   countEl.textContent=count; countEl.classList.toggle('hidden',!count);
   document.getElementById('notification-dot').classList.toggle('hidden',!count);
   document.getElementById('content').innerHTML=({overview:renderOverview,schedule:renderSchedule,requests:renderRequests,admin:renderAdmin})[view]();
+  if(view==='admin') {
+    document.querySelectorAll('.account-employee').forEach(select=>{const button=document.createElement('button');button.className='button danger';button.dataset.action='reject-user';button.dataset.id=select.dataset.user;button.textContent='Reject';select.parentElement.append(button);});
+    document.querySelectorAll('.account-row').forEach(row=>{const select=row.querySelector('[data-user]');const text=row.querySelector('small')?.textContent||'';const account=select?adminUsers.find(u=>u.id===select.dataset.user):adminUsers.find(u=>text.includes(u.email));if(account&&account.role!=='pending'&&account.id!==authUser.id){const button=document.createElement('button');button.className='button danger';button.dataset.action='revoke-user';button.dataset.id=account.id;button.textContent='Revoke access';row.append(button);}});
+  }
   document.getElementById('modal-root').innerHTML=modal ? renderModal() : '';
 }
 
@@ -258,6 +262,16 @@ document.addEventListener('click',e=>{
     const employeeId=document.querySelector(`.account-employee[data-user="${id}"]`)?.value;
     
     saveQueue.then(()=>api(`/api/users/${encodeURIComponent(id)}/approve`,{method:'POST',body:JSON.stringify({employeeId})})).then(async()=>{await loadState();toast('Account approved.');}).catch(error=>toast(error.message));
+    return;
+  }
+  if(action==='reject-user') {
+    if(!confirm('Reject this account registration?')) return;
+    saveQueue.then(()=>api(`/api/users/${encodeURIComponent(id)}/reject`,{method:'POST',body:'{}'})).then(async()=>{await loadState();toast('Account rejected.');}).catch(error=>toast(error.message));
+    return;
+  }
+  if(action==='revoke-user') {
+    if(!confirm('Revoke this user’s login access immediately?')) return;
+    saveQueue.then(()=>api(`/api/users/${encodeURIComponent(id)}/revoke`,{method:'POST',body:'{}'})).then(async()=>{await loadState();toast('Login access revoked.');}).catch(error=>toast(error.message));
     return;
   }
   if(action==='close-modal') { if(e.target!==target && target.classList.contains('modal-backdrop')) return; modal=null; render(); return; }
