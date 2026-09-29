@@ -7,14 +7,14 @@ services:
     ports:
       # Bind on all host interfaces so this continues to work after moving
       # the container to a host with a different LAN address.
-      - "5000:5000"
+      - "3005:3000"
     environment:
-      PORT: "5000"
+      PORT: "3000"
       LUNCHLY_DATA_DIR: /app/data
       LUNCHLY_HOST: "0.0.0.0"
       LUNCHLY_DISABLE_HTTPS: "1"
       TZ: Europe/Copenhagen
     volumes:
       - type: bind
-        source: ./data
+        source: ${LUNCHLY_DATA_PATH:-./data}
         target: /app/data
