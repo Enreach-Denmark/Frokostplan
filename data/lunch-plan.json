@@ -1,0 +1,287 @@
+{
+  "teams": [],
+  "employees": [
+    {
+      "id": "1061df96-bb5f-4fc9-9b99-9e86be829509",
+      "name": "Tobias Vagner Nielsen",
+      "email": "tobias.nielsen@ipnordic.dk",
+      "role": "admin",
+      "excludedFromLunch": true
+    },
+    {
+      "id": "hlxukyxb",
+      "name": "Betina Nielsen",
+      "role": "admin",
+      "excludedFromLunch": true
+    },
+    {
+      "id": "i6wqjccv",
+      "name": "Alexander Grevsen",
+      "role": "employee",
+      "excludedFromLunch": true
+    },
+    {
+      "id": "qya8gfr6",
+      "name": "Benjamin Nættermann",
+      "role": "employee"
+    },
+    {
+      "id": "euz52q39",
+      "name": "Casper Primdahl",
+      "role": "employee",
+      "excludedFromLunch": false
+    },
+    {
+      "id": "8w1u1evy",
+      "name": "Christian Philippsen",
+      "role": "employee"
+    },
+    {
+      "id": "eklv411c",
+      "name": "Daniel Thomsen",
+      "role": "employee"
+    },
+    {
+      "id": "1aichqub",
+      "name": "Emil Renkwitz",
+      "role": "employee",
+      "excludedFromLunch": true
+    },
+    {
+      "id": "iqkwobfa",
+      "name": "Kevin Holm",
+      "role": "employee"
+    },
+    {
+      "id": "zw1ghe5x",
+      "name": "Kristoffer Kirk",
+      "role": "employee"
+    },
+    {
+      "id": "d8feu5w5",
+      "name": "Lars Jessen",
+      "role": "employee"
+    },
+    {
+      "id": "15e45oki",
+      "name": "Lasse Petersen",
+      "role": "employee"
+    },
+    {
+      "id": "tt1d9e30",
+      "name": "Morten Nielsen",
+      "role": "employee"
+    },
+    {
+      "id": "ixsrlhoq",
+      "name": "Patrick Stjernholm",
+      "role": "employee"
+    },
+    {
+      "id": "v83mkpxx",
+      "name": "Timm Skøtt",
+      "role": "employee"
+    },
+    {
+      "id": "6c8lixro",
+      "name": "Tobias Greisen",
+      "role": "employee",
+      "excludedFromLunch": true
+    },
+    {
+      "id": "77vwwbzx",
+      "name": "Sandra Bøttger",
+      "role": "employee",
+      "excludedFromLunch": true
+    }
+  ],
+  "slots": [
+    {
+      "id": "slot0",
+      "start": "11:00",
+      "duration": 30
+    },
+    {
+      "id": "slot1",
+      "start": "11:30",
+      "duration": 30
+    },
+    {
+      "id": "slot2",
+      "start": "12:00",
+      "duration": 30
+    },
+    {
+      "id": "slot3",
+      "start": "12:30",
+      "duration": 30
+    }
+  ],
+  "plans": {
+    "2026-09-28": {
+      "2026-09-28": {
+        "1061df96-bb5f-4fc9-9b99-9e86be829509": "slot0",
+        "qya8gfr6": "slot2",
+        "euz52q39": "slot1",
+        "15e45oki": "slot0",
+        "ixsrlhoq": "slot0",
+        "tt1d9e30": "slot1",
+        "zw1ghe5x": "slot1",
+        "eklv411c": "slot2",
+        "iqkwobfa": "slot2",
+        "v83mkpxx": "slot2",
+        "d8feu5w5": "slot3",
+        "8w1u1evy": "slot3"
+      },
+      "2026-09-29": {
+        "qya8gfr6": "slot2",
+        "15e45oki": "slot0",
+        "ixsrlhoq": "slot0",
+        "tt1d9e30": "slot1",
+        "zw1ghe5x": "slot1",
+        "eklv411c": "slot2",
+        "iqkwobfa": "slot2",
+        "v83mkpxx": "slot2",
+        "d8feu5w5": "slot3",
+        "8w1u1evy": "slot3",
+        "euz52q39": "slot1"
+      },
+      "2026-09-30": {
+        "qya8gfr6": "slot2",
+        "15e45oki": "slot0",
+        "ixsrlhoq": "slot0",
+        "tt1d9e30": "slot1",
+        "zw1ghe5x": "slot2",
+        "eklv411c": "slot2",
+        "iqkwobfa": "slot1",
+        "v83mkpxx": "slot1",
+        "d8feu5w5": "slot3",
+        "8w1u1evy": "slot3",
+        "euz52q39": "slot2"
+      },
+      "2026-10-01": {
+        "qya8gfr6": "slot2",
+        "15e45oki": "slot0",
+        "ixsrlhoq": "slot0",
+        "tt1d9e30": "slot1",
+        "zw1ghe5x": "slot1",
+        "eklv411c": "slot2",
+        "iqkwobfa": "slot1",
+        "v83mkpxx": "slot2",
+        "d8feu5w5": "slot3",
+        "8w1u1evy": "slot3",
+        "euz52q39": "slot2"
+      },
+      "2026-10-02": {
+        "qya8gfr6": "slot2",
+        "15e45oki": "slot0",
+        "ixsrlhoq": "slot0",
+        "tt1d9e30": "slot1",
+        "zw1ghe5x": "slot1",
+        "eklv411c": "slot2",
+        "iqkwobfa": "slot1",
+        "v83mkpxx": "slot2",
+        "d8feu5w5": "slot3",
+        "8w1u1evy": "slot3",
+        "euz52q39": "slot2"
+      }
+    }
+  },
+  "requests": [
+    {
+      "id": "2952f486-3d07-4217-81e9-92777f0bc26d",
+      "fromId": "hlxukyxb",
+      "toId": "1061df96-bb5f-4fc9-9b99-9e86be829509",
+      "dates": [
+        "2026-09-28",
+        "2026-09-29",
+        "2026-10-01"
+      ],
+      "status": "accepted",
+      "createdAt": "2026-09-29T07:20:05.164Z",
+      "fromSlots": [
+        "slot1",
+        "slot1",
+        "slot1"
+      ],
+      "toSlots": [
+        "slot0",
+        "slot0",
+        "slot0"
+      ]
+    },
+    {
+      "id": "38cf7921-7b37-407e-994d-8db87da4f369",
+      "fromId": "v83mkpxx",
+      "toId": "zw1ghe5x",
+      "dates": [
+        "2026-09-30"
+      ],
+      "status": "accepted",
+      "createdAt": "2026-09-29T08:18:19.122Z",
+      "fromSlots": [
+        "slot2"
+      ],
+      "toSlots": [
+        "slot1"
+      ]
+    },
+    {
+      "id": "dc60f422-8fb7-46cf-a79e-8b2d9aaef304",
+      "fromId": "iqkwobfa",
+      "toId": "qya8gfr6",
+      "dates": [
+        "2026-09-30",
+        "2026-10-01",
+        "2026-10-02"
+      ],
+      "status": "declined",
+      "createdAt": "2026-09-29T08:23:52.656Z",
+      "fromSlots": [
+        "slot2",
+        "slot2",
+        "slot2"
+      ],
+      "toSlots": [
+        "slot2",
+        "slot2",
+        "slot2"
+      ]
+    },
+    {
+      "id": "92a4339a-de25-46ff-9789-c3eaaf92d99d",
+      "fromId": "iqkwobfa",
+      "toId": "euz52q39",
+      "dates": [
+        "2026-09-30",
+        "2026-10-01",
+        "2026-10-02"
+      ],
+      "status": "accepted",
+      "createdAt": "2026-09-29T08:24:07.057Z",
+      "fromSlots": [
+        "slot2",
+        "slot2",
+        "slot2"
+      ],
+      "toSlots": [
+        "slot1",
+        "slot1",
+        "slot1"
+      ]
+    }
+  ],
+  "lunchNow": {
+    "2026-09-28": {
+      "2026-09-29": {
+        "v83mkpxx": {
+          "slotId": "slot2",
+          "start": "12:10",
+          "end": "12:40"
+        }
+      }
+    }
+  },
+  "currentEmployeeId": null,
+  "revision": 86
+}
