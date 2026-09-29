@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 15
 
     env:
-      DEPLOY_PATH: /opt/frokostplan
+      DEPLOY_PATH: /root/docker/Frokostplan
 
     steps:
       - name: Check out repository
