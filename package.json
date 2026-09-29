@@ -1,0 +1,14 @@
+{
+  "name": "frokostplan",
+  "version": "1.0.0",
+  "description": "A standalone lunch planner with a weekly admin plan and employee swap requests.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node --test *.test.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
