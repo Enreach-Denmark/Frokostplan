@@ -8,7 +8,9 @@ docker compose ps
 docker compose logs -f lunchly
 ```
 
-Open `http://192.168.11.145:5000/`. Compose binds port 5000 to the host address `192.168.11.145`, so that address must be assigned to the Docker host. Port 5000 must be reachable through the host firewall and network policy.
+Open `http://<docker-host>:5000/`. Compose binds port 5000 on all host interfaces, so it works when the host's LAN address changes. Port 5000 must be reachable through the host firewall and network policy.
+
+If a reverse proxy is used, proxy both `/` and `/api/` to the container and preserve the public `Host`, `X-Forwarded-Host`, and `X-Forwarded-Proto` headers.
 
 This deployment sends passwords and recovery phrases over HTTP. Use it only on a network where that is acceptable, or put an HTTPS reverse proxy in front of it.
 

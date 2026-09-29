@@ -5,7 +5,9 @@ services:
     init: true
     restart: unless-stopped
     ports:
-      - "192.168.11.145:5000:5000"
+      # Bind on all host interfaces so this continues to work after moving
+      # the container to a host with a different LAN address.
+      - "5000:5000"
     environment:
       PORT: "5000"
       LUNCHLY_DATA_DIR: /app/data

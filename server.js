@@ -123,7 +123,12 @@ function authLimit(key) {
 function authFailed(key) { const entry = failures.get(key); if (entry) entry.count += 1; }
 function safeOrigin(req) {
   const origin = req.headers.origin;
-  return !origin || origin === `${protocol}://${req.headers.host}`;
+  if (!origin) return true;
+  // When running behind a TLS reverse proxy, Host/protocol at the Node
+  // process can differ from the public origin seen by the browser.
+  const forwardedHost = String(req.headers['x-forwarded-host'] || req.headers.host || '').split(',')[0].trim();
+  const forwardedProto = String(req.headers['x-forwarded-proto'] || protocol).split(',')[0].trim();
+  return origin === `${forwardedProto}://${forwardedHost}` || origin === `${protocol}://${req.headers.host}`;
 }
 function exposedState(plan, user, accounts = []) {
   return {
